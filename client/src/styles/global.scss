@@ -10,9 +10,26 @@ body {
   right: 0;
   bottom: 0;
   background: $bodyBgColor;
+  font-family: sans-serif;
+  color: $mediumGrey;
 }
 
 button {
   outline: none;
   border: none;
+}
+
+h3 {
+  font-size: 18px;
+  font-weight: $bold;
+  letter-spacing: -0.25px;
+  margin: 0;
+  margin-bottom: 4px;
+}
+
+p {
+  color: $lightGrey;
+  letter-spacing: 0;
+  margin: 0;
+  margin-bottom: 12px;
 }
