@@ -12,7 +12,8 @@ export default new Vuex.Store({
     "currentUser": {
       "image": "./assets/user-images/image-zena.jpg",
       "name": "Zena Kelley",
-      "username": "velvetround"
+      "username": "velvetround",
+      "upvoted": [1, 3]
     },
     "productRequests": [
       {
@@ -311,8 +312,32 @@ export default new Vuex.Store({
     ]
   },
   mutations: {
+    toggleUpvoteState(state, payload): void {
+      const suggestion = state.productRequests.find(suggestion => suggestion.id === payload);
+      if (!suggestion || !state.currentUser) {
+        return;
+      }
+      const alreadyUpvotedIndex = state.currentUser.upvoted.findIndex(id => id === payload);
+      if (alreadyUpvotedIndex > -1) {
+        state.currentUser.upvoted.splice(alreadyUpvotedIndex, 1);
+        suggestion.upvotes -= 1;
+      } else {
+        state.currentUser.upvoted.push(payload);
+        suggestion.upvotes += 1;
+      }
+      state.currentUser.upvoted = [...state.currentUser.upvoted];
+    }
   },
   actions: {
+  },
+  getters: {
+    getCurrentUser(state) { return state.currentUser || null },
+    getUpvotesState: (state, getters) => (suggestionId: number) => {
+      if (getters.getCurrentUser) {
+        return state.currentUser.upvoted.findIndex(id => suggestionId === id) > -1;
+      }
+      return false;
+    }
   },
   modules: {
   },
