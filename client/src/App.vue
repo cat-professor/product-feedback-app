@@ -1,24 +1,47 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js + TypeScript App"/>
+    <s-button :disable="false" @btn-click="onBtnClick">Hello!</s-button>
+    <s-button :disable="true" @btn-click="onBtnClick">Hello!</s-button>
+    <br />
+    <s-button theme="warning" :disable="false" @btn-click="onBtnClick"
+      >Hello!</s-button
+    >
+    <s-button theme="warning" :disable="true" @btn-click="onBtnClick"
+      >Hello!</s-button
+    >
+    <br />
+    <s-button theme="secondary" :disable="false" @btn-click="onBtnClick"
+      >Hello!</s-button
+    >
+    <s-button theme="secondary" :disable="true" @btn-click="onBtnClick"
+      >Hello!</s-button
+    >
+    <br />
+    <s-button theme="cancel" :disable="false" @btn-click="onBtnClick"
+      >Hello!</s-button
+    >
+    <s-button theme="cancel" :disable="true" @btn-click="onBtnClick"
+      >Hello!</s-button
+    >
   </div>
 </template>
 
 <script lang="ts">
-import { Component, Vue } from 'vue-property-decorator';
-import HelloWorld from './components/HelloWorld.vue';
+import { Component, Vue } from "vue-property-decorator";
+import SButton from "./components/SButton.vue";
 
 @Component({
   components: {
-    HelloWorld,
+    SButton,
   },
 })
-export default class App extends Vue {}
+export default class App extends Vue {
+  public onBtnClick() {
+    console.log("hello");
+  }
+}
 </script>
 
 <style lang="scss">
-#app {
-  color: $blue;
-}
+@import "./styles/index.scss";
 </style>

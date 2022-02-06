@@ -1,0 +1,19 @@
+@mixin btnStyles($baseColor) {
+  background: $baseColor;
+  
+  &:hover:not(:disabled):not(:active) {
+    background: rgba($baseColor, 0.7);
+  }
+
+  &:active {
+    background: rgba($baseColor, 0.8);
+  }
+
+  &:disabled {
+    background: rgba($baseColor, 0.3);
+  }
+
+  &:focus {
+    box-shadow: 0 0 0 2px darken($baseColor, 10%);
+  }
+}
