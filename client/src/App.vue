@@ -1,33 +1,10 @@
 <template>
-  <div id="app">
-    <s-button :disable="false" @btn-click="onBtnClick">Hello!</s-button>
-    <s-button :disable="true" @btn-click="onBtnClick">Hello!</s-button>
-    <br />
-    <s-button theme="warning" :disable="false" @btn-click="onBtnClick"
-      >Hello!</s-button
-    >
-    <s-button theme="warning" :disable="true" @btn-click="onBtnClick"
-      >Hello!</s-button
-    >
-    <br />
-    <s-button theme="secondary" :disable="false" @btn-click="onBtnClick"
-      >Hello!</s-button
-    >
-    <s-button theme="secondary" :disable="true" @btn-click="onBtnClick"
-      >Hello!</s-button
-    >
-    <br />
-    <s-button theme="cancel" :disable="false" @btn-click="onBtnClick"
-      >Hello!</s-button
-    >
-    <s-button theme="cancel" :disable="true" @btn-click="onBtnClick"
-      >Hello!</s-button
-    >
-  </div>
+  <div id="app"></div>
 </template>
 
 <script lang="ts">
-import { Component, Vue } from "vue-property-decorator";
+import { Component } from "vue-property-decorator";
+import VueWrapper from "./store/VueWrapper";
 import SButton from "./components/SButton.vue";
 
 @Component({
@@ -35,9 +12,12 @@ import SButton from "./components/SButton.vue";
     SButton,
   },
 })
-export default class App extends Vue {
+export default class App extends VueWrapper {
   public onBtnClick() {
     console.log("hello");
+  }
+  mounted() {
+    console.log(this.$store.state);
   }
 }
 </script>
