@@ -43,6 +43,7 @@ export default class Upvotes extends VueWrapper {
   }
 
   onClick(e: MouseEvent): void {
+    e.stopPropagation();
     this.$store.commit("toggleUpvoteState", this.suggestionId);
   }
 
@@ -83,6 +84,9 @@ export default class Upvotes extends VueWrapper {
 
   .upvotes-count {
     margin-top: 8px;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: -0.18px;
     color: $mediumGrey;
   }
 

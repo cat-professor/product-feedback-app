@@ -9,6 +9,32 @@ export interface AppState {
 
 export default new Vuex.Store({
   state: {
+    "categories": [
+      {
+        id: 'all',
+        title: 'All'
+      },
+      {
+        id: 'ui',
+        title: 'UI'
+      },
+      {
+        id: 'ux',
+        title: 'UX'
+      },
+      {
+        id: 'enhancement',
+        title: 'Enhancement'
+      },
+      {
+        id: 'bug',
+        title: 'Bug'
+      },
+      {
+        id: 'feature',
+        title: 'Feature'
+      },
+    ],
     "currentUser": {
       "image": "./assets/user-images/image-zena.jpg",
       "name": "Zena Kelley",

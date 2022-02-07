@@ -13,15 +13,15 @@ import SButton from "./components/SButton.vue";
   },
 })
 export default class App extends VueWrapper {
-  public onBtnClick() {
-    console.log("hello");
-  }
-  mounted() {
-    console.log(this.$store.state);
-  }
+  public onBtnClick() {}
+  mounted() {}
 }
 </script>
 
 <style lang="scss">
 @import "./styles/index.scss";
+
+#app {
+  padding: 96px 160px;
+}
 </style>

@@ -81,6 +81,8 @@ export default class SuggestionCard extends VueWrapper {
     overflow: hidden;
 
     p {
+      color: $lightGrey;
+      font-size: 16px;
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
@@ -89,6 +91,10 @@ export default class SuggestionCard extends VueWrapper {
 
   .suggestion-card-comments {
     display: flex;
+    align-items: center;
+    font-size: 16px;
+    font-weight: 700;
+    letter-spacing: -0.22px;
     flex-shrink: 0;
 
     svg {
