@@ -1,0 +1,37 @@
+@import url('https://fonts.googleapis.com/css2?family=Jost:wght@400;600;700&display=swap');
+
+*, *::after, *::backdrop {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: $bodyBgColor;
+  font-family: 'Jost', sans-serif;
+  color: $mediumGrey;
+}
+
+button {
+  outline: none;
+  border: none;
+}
+
+h3 {
+  font-size: 18px;
+  font-weight: $bold;
+  letter-spacing: -0.25px;
+  margin: 0;
+  margin-bottom: 4px;
+}
+
+p {
+  color: $lightGrey;
+  letter-spacing: 0;
+  margin: 0;
+  margin-bottom: 12px;
+}
