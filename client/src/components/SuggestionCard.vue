@@ -87,6 +87,12 @@ export default class SuggestionCard extends VueWrapper {
       overflow: hidden;
       text-overflow: ellipsis;
     }
+
+    h3 {
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
   }
 
   .suggestion-card-comments {
