@@ -1,5 +1,7 @@
 <template>
-  <suggestion-list></suggestion-list>
+  <div id="home">
+    <suggestion-list></suggestion-list>
+  </div>
 </template>
 
 <script>
@@ -13,3 +15,9 @@ export default {
   },
 };
 </script>
+
+<style lang="scss">
+#home {
+  display: flex;
+}
+</style>

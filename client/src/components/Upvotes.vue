@@ -43,7 +43,6 @@ export default class Upvotes extends VueWrapper {
   }
 
   onClick(e: MouseEvent): void {
-    e.stopPropagation();
     this.$store.commit("toggleUpvoteState", this.suggestionId);
   }
 
